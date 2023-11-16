@@ -1,0 +1,33 @@
+<div class="w-96">
+  <h1 class="text-xl text-glay-100 font-semibold">Log in</h1>
+
+  <%= form_with(scope: :session, url: login_path, data: { turbo: false },
+                class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4") do |f| %>
+
+    <div class="mb-4">
+      <%= f.label(:name, "Eメール", class: "block text-gray-700 text-sm font-bold mb-2")%>
+      <%= f.email_field :email, class: "form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"%>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label(:name, "パスワード", class: "block text-gray-700 text-sm font-bold mb-2")%>
+      <%= f.password_field :password, class: "form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"%>
+      <%= link_to "パスワードを忘れた方", new_password_reset_path, class: "inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :remember_me, class: "checkbox inline " do %>
+        <%= f.check_box :remember_me %>
+        <span>ログインしたままにする</span>
+      <% end %>
+    </div>
+
+    <div class="flex items-center justify-between gap-4">
+      <%= f.submit "Log in", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+
+  <% end %>
+  <p>新規ユーザですか? →
+    <%= link_to "新規登録する", signup_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+  </p>
+</div>

@@ -1,0 +1,22 @@
+<%= form_with(model: @user, url: password_reset_path(params[:id]), data: { turbo: false},
+              class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4") do |f| %>
+  <div class="mb-4">
+    <%= render 'shared/error_messages' %>
+  </div>
+
+  <%= hidden_field_tag :email, @user.email %>
+
+  <div class="mb-3">
+    <%= f.label(:name, "パスワード", class: "block text-gray-700 text-sm font-bold mb-2")%>
+    <%= f.password_field :password, class: "form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"%>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label(:name, "パスワード確認", class: "block text-gray-700 text-sm font-bold mb-2")%>
+    <%= f.password_field :password_confirmation, class: "form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"%>
+  </div>
+
+  <div class="flex items-center justify-between gap-4">
+    <%= f.submit "送信", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>

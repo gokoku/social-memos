@@ -1,0 +1,10 @@
+<div class="w-96">
+  <h1 class="text-xl text-glay-100 font-semibold">プロフィール</h1>
+
+  <%= render 'form' %>
+
+  <div class="gravatar_edit">
+    <%= gravatar_for @user %>
+    <a href="http://bravatar.com/emails" target="_blank">change</a>
+  </div>
+</div>
