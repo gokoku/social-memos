@@ -6,4 +6,16 @@
     <p class="text-sm leading-6"><%= @user.email%></p>
   </div>
 </div>
+<hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-300">
+<div class="">
+  <% if @user.microposts.any? %>
+    <h3 class=" mb-5 text-base font-semibold text-gray-400">Microposts (<%= @user.microposts.count %>)</h3>
 
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-1">
+      <%= render @microposts %>
+    </ul>
+    <div class="mt-10">
+      <%= will_paginate @microposts %>
+    </div>
+  <% end %>
+</div>

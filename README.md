@@ -6,3 +6,5 @@ Devise を使わずに、学習のために Rails チュートリアルから認
 ```
 $ bin/dev
 ```
+
+![alt screenShot](screenCapture.png)

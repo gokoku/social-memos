@@ -1,2 +1,8 @@
-<p class="m-10 text-xl text-gray-400">Signup</p>
-
+  <% if @microposts %>
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <%= render @microposts %>
+    </ul>
+    <div class="mt-10">
+      <%= will_paginate @microposts %>
+    </div>
+  <% end %>

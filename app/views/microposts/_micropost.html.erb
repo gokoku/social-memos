@@ -1,0 +1,13 @@
+<li id="micropost-<%= micropost.id %>" class="px-4 py-4 shadow-lg shadow-gray-300 rounded-2xl">
+  <div class="w-10 h-10 mb-2">
+    <%= link_to gravatar_for(micropost.user), micropost.user %>
+  </div>
+  <div class="">
+    <p class="text-base font-semibold leading-7 tracking-tight text-gray-900"><%= link_to micropost.user.name, micropost.user %></p>
+    <p class="text-sm"><%= micropost.content %></p>
+    <hr class="h-1 mx-auto my-1 bg-gray-100 border-0 rounded md:my-1 dark:bg-gray-300">
+    <p class="text-xs text-gray-400">
+      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    </p>
+  </div>
+</li>

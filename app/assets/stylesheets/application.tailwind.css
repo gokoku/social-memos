@@ -26,3 +26,18 @@
   background-color: rgb(83,123,237);
   color: white;
 }
+.pagination {
+  @apply text-center;
+}
+.pagination * {
+  @apply px-3 py-2 mx-2;
+  @apply text-gray-700 no-underline bg-gray-100 rounded-lg;
+}
+
+.pagination a:hover {
+  @apply font-semibold text-gray-200 bg-gray-400;
+}
+
+.pagination .current {
+  @apply bg-orange-400 text-gray-100;
+}
