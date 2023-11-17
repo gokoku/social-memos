@@ -29,11 +29,12 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # activate token が valid で mail が invalid
     get edit_account_activation_path(user.activation_token, email: "wrong")
     assert_not is_logged_in?
+    assert_template 'account_activations/invalid'
 
     # activate token も email も valid
     get edit_account_activation_path(user.activation_token, email: user.email)
-    follow_redirect!
-    assert_template 'users/show'
-    assert is_logged_in?
+    assert_not is_logged_in?
+    assert_template 'account_activations/valid'
+    assert_select "a[href=?]", login_path, count: 2
   end
 end

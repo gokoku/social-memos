@@ -11,3 +11,18 @@
 }
 
 */
+
+.alert-danger {
+  background-color: rgb(223, 86, 86);
+  color: white;
+}
+
+.alert-success {
+  background-color: rgb(39,200,75);
+  color: white;
+}
+
+.alert-info {
+  background-color: rgb(83,123,237);
+  color: white;
+}
