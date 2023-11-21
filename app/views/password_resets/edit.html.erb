@@ -1,7 +1,7 @@
 <%= form_with(model: @user, url: password_reset_path(params[:id]), data: { turbo: false},
               class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4") do |f| %>
   <div class="mb-4">
-    <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages', object: f.object %>
   </div>
 
   <%= hidden_field_tag :email, @user.email %>

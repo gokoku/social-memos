@@ -15,7 +15,7 @@
     <%= render 'layouts/header' %>
     <main class="container mx-auto w-full mt-10 px-5 flex flex-col justify-center">
       <% flash.each do |message_type, message| %>
-        <div class="mx-auto p-5 m-3 bg-blue-200 rounded-lg alert-<%= message_type %> ">
+        <div class="mx-auto p-5 m-3 bg-blue-200 rounded-lg alert alert-<%= message_type %> ">
           <%= message %>
         </div>
       <% end %>
@@ -26,3 +26,4 @@
     <%= render 'layouts/footer'%>
   </body>
 </html>
+

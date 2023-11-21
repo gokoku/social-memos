@@ -11,7 +11,10 @@
 }
 
 */
-
+.alert {
+  @apply absolute;
+  @apply top-16 self-center;
+}
 .alert-danger {
   background-color: rgb(223, 86, 86);
   color: white;
@@ -26,6 +29,20 @@
   background-color: rgb(83,123,237);
   color: white;
 }
+
+.fadeOut {
+  animation: fadeOut 5s;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .pagination {
   @apply text-center;
 }

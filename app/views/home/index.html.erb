@@ -1,8 +1,13 @@
-  <% if @microposts %>
-    <ul class="grid grid-cols-2 md:grid-cols-4 gap-5">
-      <%= render @microposts %>
-    </ul>
-    <div class="mt-10">
-      <%= will_paginate @microposts %>
-    </div>
-  <% end %>
+<% if logged_in? %>
+  <%= render 'shared/user_info' %>
+  <%= render 'microposts/micropost_form' %>
+<% end %>
+<hr>
+<% if @microposts %>
+  <ul class="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <%= render @microposts %>
+  </ul>
+  <div class="mt-10">
+    <%= will_paginate @microposts %>
+  </div>
+<% end %>
