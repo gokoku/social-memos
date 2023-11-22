@@ -30,6 +30,11 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  # ログインユーザーがアドミンであれば true その他なら false を返す
+  def admin_logged_in?
+    !current_user.nil? && current_user.admin?
+  end
+
   # ユーザーのセッションを永続的にする
   def remember(user)
     user.remember

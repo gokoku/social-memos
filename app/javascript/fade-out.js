@@ -7,4 +7,3 @@ document.addEventListener('turbo:load', () => {
     }, 5000)
   }
 })
-

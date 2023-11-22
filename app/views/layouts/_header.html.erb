@@ -14,6 +14,9 @@
     </div>
     <div class="flex flex-1 justify-end">
       <%= link_to "help", help_path, class: "text-xl font-normal leading-6 mr-4 text-gray-400" %>
+      <% if admin_logged_in? %>
+        <%= link_to "Users", admin_index_path, class: "text-xl font-normal leading-6 mr-4 text-gray-400" %>
+      <% end %>
       <% if logged_in? %>
         <%= link_to "Profile", current_user, class: "text-xl font-normal leading-6 mr-4 text-gray-400" %>
         <%= link_to "Settings", edit_user_path(@current_user), class: "text-xl font-normal leading-6 mr-4 text-gray-400" %>
